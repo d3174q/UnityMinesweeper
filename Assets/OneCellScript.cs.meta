@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d4556b9b2bd82704fa588d1ab87173f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - myText: {instanceID: 0}
+  - myButton: {instanceID: 0}
+  - myImage: {instanceID: 0}
+  - flagSpr: {fileID: 21300000, guid: 327b434cd75b5a647a59a4aabcbcaa81, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
