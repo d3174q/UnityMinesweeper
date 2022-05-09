@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32C3BDE6-E125-3128-82C1-25D0441455A3}</ProjectGuid>
+    <ProjectGuid>{29E5A896-59F3-ED76-6C33-4DB32E8A30A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,8 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\GridScript.cs" />
     <Compile Include="Assets\OneCellScript.cs" />
-    <Compile Include="Assets\GameLogicScript.cs" />
     <Compile Include="Assets\DialogBoxScript.cs" />
+    <Compile Include="Assets\GameLogicScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -11,41 +11,37 @@ public class OneCellScript : MonoBehaviour
 
     GameLogicScript mainScript;
 
-    private (int x, int y) myPosition;
-    public void OnClick()
+    private (int x, int y) myPosition; //переменная, чтобы работала функция нажатия
+    public void OnClick() //функция нажатия
     {
-        if (myImage.sprite != flagSpr)
-            if (myButton.interactable)
-                mainScript.ButtonClick(myPosition.x, myPosition.y);
+        if (myImage.sprite != flagSpr) //если без флажка
+            if (myButton.interactable) //если можно взаимодействовать
+                mainScript.ButtonClick(myPosition.x, myPosition.y); //жмём
     }
-    public void OnPointerClick()
+    public void OnPointerClick() //функция для нажимания ПКМ
     {
         if (myButton.interactable)
-            if (Input.GetMouseButtonUp(1))
-                if (myImage.sprite != flagSpr)
-                {
-                    myImage.sprite = flagSpr;
-                }
-                else
-                {
-                    myImage.sprite = defaultSpr;
-                }
+            if (Input.GetMouseButtonUp(1)) //если ПКМ
+                if (myImage.sprite != flagSpr) //если не флаг
+                    myImage.sprite = flagSpr; //ставим флаг
+                else //иначе
+                    myImage.sprite = defaultSpr; //убираем флаг
     }
-    public void SetPosition(int x, int y)
+    public void SetPosition(int x, int y) //функция чтобы кнопка знала своё место ):<
     {
         myPosition.x = x;
         myPosition.y = y;
     }
-    public void SetText(int i)
+    public void SetText(int i) //когда всё хорошо, открываем поле (функция нажатия)
     {
         if (myButton.interactable)
             if (myImage.sprite != flagSpr)
             {
-                myButton.interactable = false;
-                mainScript.fieldsCount--;
-                switch (i)
+                myButton.interactable = false; //убираем возможность нажимать 
+                mainScript.fieldsCount--; //отнимаем счётчик для победы
+                switch (i) //ставим цвет
                 {
-                    case 0:
+                    case 0: //если вокруг нет мин, открываем всё вокруг (рекурсия)
                         for (int k = myPosition.x - 1; k < myPosition.x + 2; k++)
                             if (k > -1 & k < 30)
                                 for (int l = myPosition.y - 1; l < myPosition.y + 2; l++)
@@ -77,11 +73,11 @@ public class OneCellScript : MonoBehaviour
                         myText.color = Color.black;
                         break;
                     default:
-                        myImage.sprite = bombSpr;
+                        myImage.sprite = bombSpr; //если больше восьми, ставим картинку мины
                         break;
                 }
                 if (i > 0 & i < 9)
-                    myText.text = i.ToString();
+                    myText.text = i.ToString(); //ставим циферку
             }
     }
     private void Awake()

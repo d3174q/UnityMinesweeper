@@ -5,17 +5,17 @@ public class DialogBoxScript : MonoBehaviour
 {
     [SerializeField] Text myText;
     GameLogicScript mainScript;
-    public void ISeeThitAsAnAbsoluteWin()
+    public void ISeeThitAsAnAbsoluteWin() //при победе
     {
-        myText.text = "Поздравляю, вас не порвало на мине, хотите ещё?";
+        myText.text = "Поздравляю, вас не порвало на мине, хотите ещё?"; //радуем юзера
     }
     public void OnClickYes()
     {
-        mainScript.DialogBox(true);
+        mainScript.DialogBox(true); //если нажал да
     }
     public void OnClickNo()
     {
-        mainScript.DialogBox(false);
+        mainScript.DialogBox(false); //если нажал нет
     }
     private void Awake()
     {
